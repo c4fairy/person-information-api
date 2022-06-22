@@ -6,7 +6,7 @@ import ru.dina.dto.Person;
 
 import java.util.List;
 
-@FeignClient(name = "person-service", url = "http://localhost:8080//persons/")
+@FeignClient(name = "person-service", url = "${url.client:http://localhost:8080//persons/}")
 public interface PersonFeignClient {
     @GetMapping()
     List<Person> getAllPersons();
